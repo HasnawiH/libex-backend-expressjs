@@ -3,7 +3,7 @@ const db = require('../Configs/db')
 module.exports = {
     getByTitle: bookTitle => {
         return new Promise((resolve, reject) => {
-            db.query('SELECT * FROM book WHERE title=?', [bookTitle], (error, response) => {
+            db.query('SELECT * FROM book WHERE title=?', [book], (error, response) => {
                 if (!error) {
                     resolve(response)
                 } else {
