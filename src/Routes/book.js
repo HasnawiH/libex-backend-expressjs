@@ -6,7 +6,7 @@ Router.get('/', bookController.getByTitle)
 Router.get('/genre/:genre', bookController.getByGenre)
 Router.get('/status/:status', bookController.getByStatus)
 Router.post('/', bookController.postBook)
-Router.put('/', bookController.updateBook)
+Router.put('/:id', bookController.updateBook)
 Router.delete('/', bookController.deleteBook)
 
 module.exports = Router
