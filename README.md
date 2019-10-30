@@ -1,4 +1,4 @@
-# libraryBackend
+# Library Backend
 
 <p align = "center"><a href="https://www.arkademy.com/" target="blank"><img src="https://www.arkademy.com/img/logo%20arkademy-01.9c1222ba.png" width="200" alt="Arkademy" /></a></p>
 
@@ -17,7 +17,7 @@ library REST API Using NodeJS MySQL ExpressJS
   - [Stacks](#stacks)
   - [Dependencies](#dependencies)
   - [Aplication Structure](#aplication-Structure)
-  - [Docs](#docs)
+  - [Documents](#docs)
     - [Book](#Book)
     - [Genre](#genre)
     - [Status](#status)
@@ -82,20 +82,20 @@ $ npm run server
 | GET    | /book    | Get list book     | -                | -                                                                                                         | `title`:STRING `author`:STRING `genre`: STRING `status`:STRING |
 | POST   | /book/   | Add New book      | -                | `title`:STRING (Required) `author`:STRING (Required) `status`:STRING (Required) `genre`:STRING (Required) | -                                                              |
 | PUT    | book/id  | Edit book By ID   | `id`: INT (UUID) | `title`:STRING (Required) `author`:STRING (Required) `status`:STRING (Required) `genre`:STRING (Required) | -                                                              |
-| DELETE | book/id  | Delete book By ID | -                | `id`:INT                                                                                                  | -                                                              |
+| DELETE | book/id  | Delete book By ID | `id`: INT (UUID) | `id`:INT                                                                                                  | -                                                              |
 
 ### **Genre**
 
-| Method | Endpoint    | Description         | Request Param | Request Body | Request Query |
-| ------ | ----------- | ------------------- | ------------- | ------------ | ------------- |
-| GET    | /book/genre | Get Genres By Genre | -             | -            | -             |
+| Method | Endpoint    | Description         | Request Param    | Request Body | Request Query |
+| ------ | ----------- | ------------------- | ---------------- | ------------ | ------------- |
+| GET    | /book/genre | Get Genres By Genre | `Genre`: VARCHAR | -            | -             |
 
 ---
 
 ### **Status**
 
-| Method | Endpoint     | Description          | Request Param | Request Body | Request Query |
-| ------ | ------------ | -------------------- | ------------- | ------------ | ------------- |
-| GET    | /book/status | Get Status By Status | -             | -            | -             |
+| Method | Endpoint     | Description          | Request Param     | Request Body | Request Query |
+| ------ | ------------ | -------------------- | ----------------- | ------------ | ------------- |
+| GET    | /book/status | Get Status By Status | `Status`: VARCHAR | -            | -             |
 
 ---
