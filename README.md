@@ -2,7 +2,7 @@
 
 <p align = "center"><a href="https://www.arkademy.com/" target="blank"><img src="https://www.arkademy.com/img/logo%20arkademy-01.9c1222ba.png" width="200" alt="Arkademy" /></a></p>
 
-library REST API Using NodeJS MySQL ExpressJS
+Library REST API Using NodeJS MySQL ExpressJS
 
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
@@ -38,7 +38,7 @@ $ npm install
 ```env
 DB_HOST      = 'localhost'
 DB_USER      = 'root'
-DB_PASSWORD  = ''
+DB_PASSWORD  = 'xxx'
 DB_DATABASE  = 'librarydb'
 ````
 
