@@ -1,9 +1,9 @@
 const db = require('../Configs/db')
 
 module.exports = {
-    getByTitle: bookTitle => {
+    getAll: () => {
         return new Promise((resolve, reject) => {
-            db.query('SELECT * FROM book WHERE title=?', [book], (error, response) => {
+            db.query('SELECT * FROM book', (error, response) => {
                 if (!error) {
                     resolve(response)
                 } else {
@@ -57,7 +57,7 @@ module.exports = {
         return new Promise((resolve, reject) => {
             db.query('DELETE FROM book WHERE id=?', [deleteBook], (error, response) => {
                 if (!error) {
-                    resolve('Delete Successfully')
+                    resolve(response)
                 } else {
                     reject(error)
                 }

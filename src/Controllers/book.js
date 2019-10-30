@@ -1,9 +1,8 @@
 const bookModel = require('../Models/book')
 
 module.exports = {
-    getByTitle: (req, res) => {
-        const bookTitle = req.query.title
-        bookModel.getByTitle(bookTitle)
+    getAll: (req, res) => {
+        bookModel.getAll()
             .then(response => res.json(response))
             .catch(error => console.log(error))
     },
@@ -47,7 +46,7 @@ module.exports = {
     },
 
     deleteBook: (req, res) => {
-        const bookDelete = req.query.id
+        const bookDelete = req.params.id
         bookModel.deleteBook(bookDelete)
             .then(response => res.json(response))
             .catch(error => console.log(error))
