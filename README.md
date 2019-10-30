@@ -9,12 +9,6 @@ library REST API Using NodeJS MySQL ExpressJS
 [![GitHub followers](https://img.shields.io/github/followers/iyansr?style=social)](https://github.com/iyansr?tab=followers)
 ![GitHub repo size](https://img.shields.io/github/repo-size/iyansr/novel-library-api)
 
-<p align="center">
-  <a href="https://nodejs.org/">
-    <img title="Restful API" height='200' src="https://raw.githubusercontent.com/iyansr/novel-library-api/master/img.jpg">
-  </a>
-</p>
-
 # Table Of Content
 
 - [Book manager library](#book-manager-library)
