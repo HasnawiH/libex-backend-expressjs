@@ -10,7 +10,7 @@ Library REST API Using NodeJS MySQL ExpressJS
 
 # Table Of Content
 
-- [Book manager library](#book-manager-library)
+- [Library Backend](#library-backend)
   - [Table Of Content](#table-of-content)
   - [Build Setup](#build-setup)
   - [Stacks](#stacks)

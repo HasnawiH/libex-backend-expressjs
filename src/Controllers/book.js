@@ -48,7 +48,10 @@ module.exports = {
     deleteBook: (req, res) => {
         const bookDelete = req.params.id
         bookModel.deleteBook(bookDelete)
-            .then(response => res.json(response))
+            .then(response => res.json({
+                msg: `Delete Successfully..`,
+                response
+            }))
             .catch(error => console.log(error))
     }
 }
