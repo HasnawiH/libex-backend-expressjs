@@ -1,46 +1,31 @@
 //===== configuration
-require('dotenv').config()
+require("dotenv").config();
 
-const express = require('express')
-const bodyParser = require('body-parser')
-const logger = require('morgan')
-const router = require('./src/Routes/index')
-const app = express()
-const PORT = process.env.PORT || 8000
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const logger = require("morgan");
+const router = require("./src/Routes/index");
+const app = express();
+const PORT = process.env.PORT || 8000;
 // const multer = require('multer')
 // const path = require('path');
 
-app.use(logger('dev'))
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({
+app.use(logger("dev"));
+app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
     extended: false
-}))
-
-app.use('/', router)
+  })
+);
+app.use(cors());
+app.use("/", router);
 
 app.listen(PORT, () => {
-    console.log(`Server  is running at ${PORT}`)
-})
+  console.log(`Server  is running at ${PORT}`);
+});
 
-module.exports = app
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+module.exports = app;
 
 //====  CRUD API
 //=GET
@@ -54,7 +39,7 @@ module.exports = app
 //     })
 // })
 
-//=DELETE 
+//=DELETE
 // app.delete('/book', (req, res) => {
 //     db.query('DELETE FROM book WHERE id=?',[req.query.id], (error,response) =>{
 //         if (!error){
@@ -81,7 +66,6 @@ module.exports = app
 //     })
 // })
 
-
 //=PUT / Update
 // app.put('/book/:id', (req,res)=>{
 //     const body = {
@@ -98,7 +82,6 @@ module.exports = app
 //     //     }
 //     // })
 // })
-
 
 // filter by genre
 // app.get('/book/genre/:genre', (req, res) => {
