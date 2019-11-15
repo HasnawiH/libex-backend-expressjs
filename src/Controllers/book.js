@@ -8,6 +8,14 @@ module.exports = {
       .catch(error => console.log(error));
   },
 
+  getByTitle: (req, res) => {
+    const bookTitle = req.params.title;
+    bookModel
+      .getByTitle(bookTitle)
+      .then(response => res.json(response))
+      .catch(error => console.log(error));
+  },
+
   getByGenre: (req, res) => {
     const bookGenre = req.params.genre;
     bookModel
@@ -45,7 +53,12 @@ module.exports = {
     const id = req.params.id;
     bookModel
       .updateBook(body, id)
-      .then(response => res.json(response))
+      .then(response =>
+        res.json({
+          msg: `Updated Successfully..`,
+          response
+        })
+      )
       .catch(error => console.log(error));
   },
 
