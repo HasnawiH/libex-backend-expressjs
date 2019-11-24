@@ -2,6 +2,7 @@ const db = require("../Configs/db");
 
 module.exports = {
   getAll: () => {
+    console.log(`inimi`);
     return new Promise((resolve, reject) => {
       db.query("SELECT * FROM book", (error, response) => {
         if (!error) {
