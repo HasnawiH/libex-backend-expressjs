@@ -3,6 +3,7 @@ require("dotenv").config();
 
 const express = require("express");
 const cors = require("cors");
+const helmet = require("helmet");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const router = require("./src/Routes/index");
@@ -19,6 +20,7 @@ app.use(
   })
 );
 app.use(cors());
+app.use(helmet.xssFilter());
 app.use("/", router);
 
 app.listen(PORT, () => {
