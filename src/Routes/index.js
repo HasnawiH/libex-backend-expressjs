@@ -1,9 +1,10 @@
-const express = require('express')
-const book = require('./book')
+const express = require("express");
+const book = require("./book");
+const user = require("./user");
 
-const Router = express.Router()
+const router = express.Router();
 
-Router.use('/book', book)
+router.use("/book", book);
+router.use("/user", user);
 
-
-module.exports = Router
+module.exports = router;

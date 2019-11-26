@@ -1,11 +1,10 @@
 require("dotenv").config();
 const userModel = require("../Models/user");
 const formResponse = require("../Helpers/formResponse");
-
 const jwt = require("jsonwebtoken");
 const joi = require("@hapi/joi");
 const crypto = require("crypto-js");
-const secret = process.env.SECRET_KEY;
+const secret = process.env.TOKEN_SECRET;
 
 const formValidation = data => {
   const schema = joi.object().keys({
@@ -39,7 +38,7 @@ const userController = {
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
-      level: 2
+      level: "user"
     };
     const isValid = formValidation(body);
     if (!isValid) {
@@ -86,7 +85,7 @@ const userController = {
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
-      level: 1
+      level: "admin"
     };
 
     if (!formValidation(body)) {
@@ -129,6 +128,7 @@ const userController = {
   login: (req, res) => {
     const email = req.body.email;
     const password = hash(req.body.password);
+    // const password = req.body.password;
     console.log("login ", email, " ", password);
     userModel
       .login(email, password)
@@ -153,6 +153,7 @@ const userController = {
               },
               token
             };
+            // console.log(`ini`, token);
             formResponse.success(res, 200, {}, data);
           });
         } else {

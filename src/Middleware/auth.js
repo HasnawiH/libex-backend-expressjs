@@ -8,6 +8,7 @@ const auth = {
     if (bearerHeader !== undefined) {
       const bearer = bearerHeader.split(" ");
       const token = bearer[1];
+      console.log(`ini token`, token);
 
       try {
         const data = jwt.verify(token, secret);
@@ -29,7 +30,7 @@ const auth = {
   },
 
   verifyAdmin: (req, res, next) => {
-    if (req.level === 1) {
+    if (req.level === "admin") {
       next();
     } else {
       res.sendStatus(403);

@@ -7,6 +7,7 @@ const helmet = require("helmet");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const router = require("./src/Routes/index");
+const user = require("./src/Routes/user");
 const app = express();
 const PORT = process.env.PORT || 8000;
 // const multer = require('multer')
@@ -15,7 +16,6 @@ const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(`Server  is running at ${PORT}`);
 });
-
 
 app.use(logger("dev"));
 app.use(bodyParser.json());
@@ -27,5 +27,3 @@ app.use(
 app.use(cors());
 app.use(helmet.xssFilter());
 app.use("/", router);
-
-
