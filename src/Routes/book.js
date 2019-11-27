@@ -4,7 +4,7 @@ const bookController = require("../Controllers/book");
 const auth = require("../Middleware/auth");
 
 router
-  .get("/", auth.verifyToken, bookController.getAll)
+  .get("/", bookController.getAll)
   .get("/search/:title", bookController.getByTitle)
   .get("/genre/:genre", bookController.getByGenre)
   .get("/status/:status", bookController.getByStatus)
