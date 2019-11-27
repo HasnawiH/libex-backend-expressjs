@@ -20,7 +20,7 @@ const formValidation = data => {
       .string()
       .min(8)
       .required(),
-    level: joi.number().required()
+    level: joi.string().required()
   });
   const result = schema.validate(data);
 
