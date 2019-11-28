@@ -73,5 +73,18 @@ module.exports = {
         })
       )
       .catch(error => console.log(error));
+  },
+
+  postBorrow: (req, res) => {
+    const body = {
+      ...req.body,
+      rent_at: new Date(),
+      return_at: new Date()
+    };
+
+    bookModel
+      .borrowBook(body)
+      .then(response => res.json(response))
+      .catch(error => console.log(error));
   }
 };
