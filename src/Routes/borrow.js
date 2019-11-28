@@ -4,6 +4,6 @@ const router = express.Router();
 const bookController = require("../Controllers/book");
 // const bookController = require("../Controllers/borrow");
 
-router.post("/", bookController.postBorrow);
+router.post("/borrow", bookController.postBorrow);
 
 module.exports = router;

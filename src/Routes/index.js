@@ -7,6 +7,6 @@ const router = express.Router();
 
 router.use("/book", book);
 router.use("/user", user);
-router.use("/borrow", borrow);
+router.use("/", borrow);
 
 module.exports = router;
