@@ -38,7 +38,7 @@ const userController = {
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
-      level: "user"
+      level: "admin"
     };
     const isValid = formValidation(body);
     if (!isValid) {
@@ -60,10 +60,10 @@ const userController = {
                     id: id[0]["MAX (id)"],
                     name: req.body.name,
                     email: req.body.email,
-                    level: 2
+                    level: "admin"
                   };
 
-                  formResponse.success(res, 200, {error:"success"}, data);
+                  formResponse.success(res, 200, { error: "success" }, data);
                 })
                 .catch(error => {
                   res.json(error);
