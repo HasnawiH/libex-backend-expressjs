@@ -1,4 +1,4 @@
-const borrowModel = require("../Models/borrow.js");
+const borrowModel = require("../Models/borrow");
 
 module.exports = {
   postBorrow: (req, res) => {
