@@ -62,7 +62,8 @@ const userController = {
                     email: req.body.email,
                     level: 2
                   };
-                  formResponse.success(res, 200, rsult, data);
+
+                  formResponse.success(res, 200, {error:"success"}, data);
                 })
                 .catch(error => {
                   res.json(error);
