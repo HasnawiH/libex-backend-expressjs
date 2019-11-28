@@ -1,4 +1,4 @@
-const borrowModel = require("../Models/borrow");
+const borrow = require("../Models/borrow");
 
 module.exports = {
   postBorrow: (req, res) => {
@@ -8,7 +8,7 @@ module.exports = {
       return_at: new Date()
     };
 
-    borrowModel
+    borrow
       .postBorrow(body)
       .then(response => res.json(response))
       .catch(error => console.log(error));
