@@ -1,7 +1,7 @@
 const express = require("express");
 const book = require("./book");
 const user = require("./user");
-const user = require("./borrow");
+const borrow = require("./borrow");
 
 const router = express.Router();
 
