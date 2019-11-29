@@ -108,7 +108,6 @@ module.exports = {
     const body = {
       ...req.body
     };
-
     bookModel
       .whislistBook(body)
       .then(response => res.json(response))

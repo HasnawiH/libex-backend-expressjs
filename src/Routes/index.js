@@ -9,6 +9,6 @@ const router = express.Router();
 router.use("/book", book);
 router.use("/user", user);
 router.use("/borrow", borrow);
-router.use("/whislist", whislist);
+router.use("/whishlist", whislist);
 
 module.exports = router;
