@@ -8,8 +8,8 @@ router
   .get("/search/:title", bookController.getByTitle)
   .get("/genre/:genre", bookController.getByGenre)
   .get("/status/:status", bookController.getByStatus)
-  .post("/add", bookController.postBook)
-  .put("/update/:id", bookController.updateBook)
-  .delete("/:id", bookController.deleteBook);
+  .post("/add", auth.verifyAdmin, bookController.postBook)
+  .put("/update/:id", auth.verifyAdmin, bookController.updateBook)
+  .delete("/:id", auth.verifyAdmin, bookController.deleteBook);
 
 module.exports = router;
