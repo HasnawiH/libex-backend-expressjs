@@ -65,6 +65,38 @@ module.exports = {
     });
   },
 
+  getBorrow: id_user => {
+    return new Promise((resolve, reject) => {
+      db.query(
+        "SELECT book.title,book.imgUrl,book.status,user.name FROM transaction JOIN book ON book.id=transaction.id_book JOIN user ON user.user_id=transaction.id_user WHERE transaction.id_user=?",
+        [id_user],
+        (error, response) => {
+          if (!error) {
+            resolve(response);
+          } else {
+            reject(error);
+          }
+        }
+      );
+    });
+  },
+
+  getWhislist: id_user => {
+    return new Promise((resolve, reject) => {
+      db.query(
+        "SELECT book.title,book.imgUrl,book.status,user.name FROM transaction JOIN book ON book.id=transaction.id_book JOIN user ON user.user_id=transaction.id_user WHERE transaction.id_user=?",
+        [id_user],
+        (error, response) => {
+          if (!error) {
+            resolve(response);
+          } else {
+            reject(error);
+          }
+        }
+      );
+    });
+  },
+
   //POST
   postBook: body => {
     return new Promise((resolve, reject) => {
@@ -115,6 +147,18 @@ module.exports = {
   borrowBook: body => {
     return new Promise((resolve, reject) => {
       db.query("INSERT INTO transaction SET ?", [body], (error, response) => {
+        if (!error) {
+          resolve(response);
+        } else {
+          reject(error);
+        }
+      });
+    });
+  },
+
+  whislistBook: body => {
+    return new Promise((resolve, reject) => {
+      db.query("INSERT INTO whislist SET ?", [body], (error, response) => {
         if (!error) {
           resolve(response);
         } else {

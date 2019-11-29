@@ -32,6 +32,22 @@ module.exports = {
       .catch(error => console.log(error));
   },
 
+  getBorrow: (req, res) => {
+    const borrow = req.params.id_user;
+    bookModel
+      .getBorrow(borrow)
+      .then(response => res.json(response))
+      .catch(error => console.log(error));
+  },
+
+  getWhislist: (req, res) => {
+    const whislist = req.params.id_user;
+    bookModel
+      .getWhislist(whislist)
+      .then(response => res.json(response))
+      .catch(error => console.log(error));
+  },
+
   postBook: (req, res) => {
     const body = {
       ...req.body,
@@ -84,6 +100,17 @@ module.exports = {
 
     bookModel
       .borrowBook(body)
+      .then(response => res.json(response))
+      .catch(error => console.log(error));
+  },
+
+  postWhislist: (req, res) => {
+    const body = {
+      ...req.body
+    };
+
+    bookModel
+      .whislistBook(body)
       .then(response => res.json(response))
       .catch(error => console.log(error));
   }
