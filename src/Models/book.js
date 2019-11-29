@@ -68,7 +68,7 @@ module.exports = {
   getBorrow: id_user => {
     return new Promise((resolve, reject) => {
       db.query(
-        "SELECT book.title,book.imgUrl,book.status,user.name FROM transaction JOIN book ON book.id=transaction.id_book JOIN user ON user.user_id=transaction.id_user WHERE transaction.id_user=?",
+        "SELECT F.rent_at, book.title,book.imgUrl,book.desc,user.name FROM transaction F JOIN book ON book.id=F.id_book JOIN user ON user.user_id=F.id_user WHERE F.id_user=?",
         [id_user],
         (error, response) => {
           if (!error) {
