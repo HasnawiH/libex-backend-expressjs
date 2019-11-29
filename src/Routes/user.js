@@ -5,12 +5,6 @@ const auth = require("../Middleware/auth");
 const userController = require("../Controllers/user");
 
 router
-  .post(
-    "/register/admin",
-    auth.verifyToken,
-    auth.verifyAdmin,
-    userController.registerAdmin
-  )
   .post("/register", userController.register)
   .post("/login", userController.login);
 

@@ -81,51 +81,6 @@ const userController = {
     }
   },
 
-  registerAdmin: (req, res) => {
-    const body = {
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password,
-      level: "admin"
-    };
-
-    if (!formValidation(body)) {
-      return formResponse.success(res, 401, { error: "Invalid Data!" });
-    }
-
-    body.password = hash(body.password);
-
-    userModel
-      .getUserByEmail(body.email)
-      .then(result => {
-        if (result.length === 0) {
-          userModel.register(body).then(rsult => {
-            userModel
-              .getLastID()
-              .then(id => {
-                const data = {
-                  id: id[0]["MAX (id)"],
-                  name: req.body.name,
-                  email: req.body.email,
-                  level: 1
-                };
-                formResponse.success(res, 200, rsult, data);
-              })
-              .catch(error => {
-                res.json(error);
-              });
-          });
-        } else {
-          formResponse.success(res, 403, {
-            error: "Email is already registered!"
-          });
-        }
-      })
-      .catch(error => {
-        res.json(error);
-      });
-  },
-
   login: (req, res) => {
     const email = req.body.email;
     const password = hash(req.body.password);
