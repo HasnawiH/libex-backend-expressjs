@@ -5,6 +5,6 @@ const bookController = require("../Controllers/book");
 // const bookController = require("../Controllers/borrow");
 
 router.post("/", bookController.postWhislist);
-router.post("/get", bookController.getWhislist);
+router.post("/get/:id_user", bookController.getWhislist);
 
 module.exports = router;
