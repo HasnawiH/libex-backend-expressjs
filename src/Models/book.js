@@ -18,7 +18,7 @@ module.exports = {
   getByTitle: bookTitle => {
     return new Promise((resolve, reject) => {
       db.query(
-        "SELECT * FROM book WHERE title LIKE CONCAT('%',?,'%')",
+        "SELECT * FROM book WHERE title LIKE CONCAT(?,'%',?,'%')",
         [bookTitle],
         (error, response) => {
           if (!error) {
